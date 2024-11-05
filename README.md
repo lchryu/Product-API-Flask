@@ -19,20 +19,20 @@ Một RESTful API đơn giản để quản lý sản phẩm được xây dựn
 ## Cài đặt
 
 1. Clone repository
-\```bash
+```bash
 git clone https://github.com/your-username/product-management-api.git
 cd product-management-api
-\```
+```
 
 2. Cài đặt các thư viện cần thiết
-\```bash
+```bash
 pip install flask
 pip install flask-sqlalchemy
 pip install pymysql
-\```
+```
 
 3. Tạo database MySQL
-\```sql
+```sql
 CREATE DATABASE product_management;
 USE product_management;
 
@@ -44,27 +44,27 @@ CREATE TABLE products (
     quantity INT NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-\```
+```
 
 4. Cấu hình database
 Mở file `config.py` và cập nhật thông tin kết nối database:
-\```python
+```python
 SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://username:password@localhost/product_management'
-\```
+```
 
 5. Chạy ứng dụng
-\```bash
+```bash
 python app.py
-\```
+```
 
 ## API Endpoints
 
 ### Lấy danh sách sản phẩm
-\```http
+```http
 GET /api/products?page=1&per_page=10
-\```
+```
 #### Response
-\```json
+```json
 {
     "success": true,
     "data": {
@@ -75,14 +75,14 @@ GET /api/products?page=1&per_page=10
         "per_page": 10
     }
 }
-\```
+```
 
 ### Lấy chi tiết sản phẩm
-\```http
+```http
 GET /api/products/{id}
-\```
+```
 #### Response
-\```json
+```json
 {
     "success": true,
     "data": {
@@ -94,10 +94,10 @@ GET /api/products/{id}
         "created_at": "2024-03-06 15:30:00"
     }
 }
-\```
+```
 
 ### Tạo sản phẩm mới
-\```http
+```http
 POST /api/products
 Content-Type: application/json
 
@@ -107,10 +107,10 @@ Content-Type: application/json
     "price": 25000000,
     "quantity": 10
 }
-\```
+```
 
 ### Cập nhật sản phẩm
-\```http
+```http
 PUT /api/products/{id}
 Content-Type: application/json
 
@@ -118,20 +118,20 @@ Content-Type: application/json
     "price": 26000000,
     "quantity": 8
 }
-\```
+```
 
 ### Xóa sản phẩm
-\```http
+```http
 DELETE /api/products/{id}
-\```
+```
 
 ## Cấu trúc Project
 
-\```
+```
 product_api/
 ├── config.py         # Cấu hình database
 └── app.py           # File chính
-\```
+```
 
 ## Đóng góp
 
